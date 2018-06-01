@@ -519,7 +519,7 @@ def makeObjectDB(verbose=False, force=False,
       adjusted_seconds = int(int(g_maps_minutes)*60*.666/30)*30
       print('adding transfer: {0}'.format(adjusted_seconds))
       hms = secondsToHMS(str(adjusted_seconds))
-      txobjA = Transfer(time=hms, to=st, frm=sf)
+      txobjA = Transfer(time=hms, to=st, frm=sf
       txobjB = Transfer(time=hms, to=sf, frm=st)
       txobjA.save()
       txobjB.save()
