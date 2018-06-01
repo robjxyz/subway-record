@@ -498,18 +498,18 @@ lookup = {
         'S31':(('S30','S22','S19',),'St George'),
 }
 
-def genDict():
-    allStops = Stop.select()
-    #randomStop = allStops[randint(0,len(allStops))]
-    i = 0
-    for stop in allStops:
-        adjacents = stop.adjacent(0)
-        adjacents.sort(key=lambda tup: tup[0],reverse=True)
-        st = ''
-        st += "'{0}':((".format(stop.stop_id)
-        for s,t in adjacents:
-            st+="'{0}',".format(s)
-        print(st+"),'{0}'),".format(stop.name)) 
+#def genDict():
+#    allStops = Stop.select()
+#    #randomStop = allStops[randint(0,len(allStops))]
+#    i = 0
+#    for stop in allStops:
+#        adjacents = stop.adjacent(0)
+#        adjacents.sort(key=lambda tup: tup[0],reverse=True)
+#        st = ''
+#        st += "'{0}':((".format(stop.stop_id)
+#        for s,t in adjacents:
+#            st+="'{0}',".format(s)
+#        print(st+"),'{0}'),".format(stop.name)) 
 #        i+= 1
 #        if i>l: break
 
