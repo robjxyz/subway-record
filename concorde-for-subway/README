@@ -1,0 +1,31 @@
+Readme, written by Rob 1/14/18
+
+Getting Concorde working can be a little complex:
+
+You'll need "Concorde" source (co031219.tgz) to be unpacked 
+into a "concorde" directory
+You also need the Linear Programming solver QSOPT to exist 
+on your system somewhere. Presumably it's in the same
+directory as this README file "/QS/"
+
+You'll want to run /src/concorde/configure as a script with
+the following flags
+./configure --with-qsopt=/dir/to/QS
+then run 
+"make"
+
+You might run into problems with a 32 bit versoin running on
+a 64 bit system. you need to do something to make gcc run with 
+-m32 flags I think. 
+Last time I got this working I installed some programs
+sudo apt-get install g++-multilib
+export CFLAGS='-m32'
+export CXXFLAGS='-m32'
+export LDFLAGS='-m32'
+
+So who knows...
+
+When you're done, there should be a directory /TSP/ with 
+./concorde inside.  
+
+Good luck!
