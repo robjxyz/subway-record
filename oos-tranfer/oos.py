@@ -8,17 +8,23 @@ def pack(header, row):
         d[header[i]]=row[i]
     return d
 
-entrances = []
-with open("StationEntrances.csv") as f:
-    reader = csv.reader(f)
-    header = next(reader)
-    entrances = [pack(header,r) for r in reader]
-
+def stationCode(e):
+    for s in stations:
+        if s['GTFS Latitude'] == e['Station_Latitude']:
+            if s['GTFS Longitude'] == e['Station_Longitude']:
+                return(s['GTFS Stop ID'])
 stations = []
 with open("Stations.csv") as f:
     reader = csv.reader(f)
     header = next(reader)
     stations = [pack(header,r) for r in reader]
+entrances = []
+with open("StationEntrances.csv") as f:
+    reader = csv.reader(f)
+    header = next(reader)
+    entrances = [pack(header,r) for r in reader]
+for ent in entrances:
+	ent['Stop_Code']=stationCode(ent)
 
 print(len(entrances))
 print(entrances[0])
@@ -26,14 +32,6 @@ print(entrances[0])
 print(len(stations))
 print(stations[0])
 
-def stationCode(e):
-    print(e['Station_Name'])
-    print(e['Station_Latitude'])
-    print(e['Station_Longitude'])
-    for s in stations:
-        if s['GTFS Latitude'] == e['Station_Latitude']:
-            if s['GTFS Longitude'] == e['Station_Longitude']:
-                return(s['GTFS Stop ID'])
 
-for ent in entrances:
-  print(stationCode(ent))
+#for ent in entrances:
+#  print(stationCode(ent))
