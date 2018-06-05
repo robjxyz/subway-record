@@ -21,6 +21,24 @@ def getEnts(s):
 		if e['Stop ID'] == s['GTFS Stop ID']:
 			ents.append(e)
 	return ents
+def getComplex(s):
+	cplx = []
+	for sta in stations:
+		if s['Complex ID'] == sta['Complex ID']:
+			cplx.append(sta)
+	return cplx
+def getAllEnts(s):
+	allEnts = []
+	for sta in getComplex(s):
+		allEnts += getEnts(sta)
+	return allEnts
+#print a stops details nicely
+def printStop(s):
+	print('{0} - {1}, {2}'.format(s['Stop Name'],s['GTFS Stop ID'],
+		s['Daytime Routes']))
+def printEnt(e):
+	print('{0} {1},{2},{3}'.format(e['Stop ID'],
+		e['North_South_Street'],e['East_West_Street'],e['Corner']))	
 def gmapsDistance(s1,s2):
 	origin = '{0},{1}'.format(
 		s1['GTFS Latitude'],s1['GTFS Longitude'])
@@ -50,7 +68,9 @@ for ent in entrances:
 stopone = random.choice(stations)
 stoptwo = random.choice(stations)
 
-gmapsDistance(stopone,stoptwo)
+#gmapsDistance(stopone,stoptwo)
 #for ent in entrances:
 
-#  print(stationCode(ent))
+printStop(stopone)
+for e in getAllEnts(stopone):
+	printEnt(e)
