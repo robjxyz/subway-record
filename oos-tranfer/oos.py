@@ -47,10 +47,10 @@ def printEnt(e):
 def printGmaps(j):
 	print('Origins:')
 	for o in range(len(j['origin_addresses'])):
-		print('\t{0}\t{1}'.format(str(o),j['origin_addresses'][o]))
+		print('  {0}  {1}'.format(str(o),j['origin_addresses'][o]))
 	print('Destinations:')
 	for d in range(len(j['destination_addresses'])):
-		print('\t{0}\t{1}'.format(chr(ord('A')+d),j['destination_addresses'][d]))
+		print('  {0}  {1}'.format(chr(ord('A')+d),j['destination_addresses'][d]))
 def gmapsRequest(s1,s2):
 	origin = origDestString(s1)
 	dest = origDestString(s2)
