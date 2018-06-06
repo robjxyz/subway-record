@@ -235,7 +235,7 @@ Station ID,Complex ID,GTFS Stop ID,Division,Line,Stop Name,Borough,Daytime Route
 232,232,F14,IND,6th Av - Culver,2 Av,M,F,Subway,40.723402,-73.989938
 233,625,F15,IND,6th Av - Culver,Delancey St,M,F,Subway,40.718611,-73.988114
 234,234,F16,IND,6th Av - Culver,East Broadway,M,F,Subway,40.713715,-73.990173
-235,235,F18,IND,6th Av - Culver,York St,Bk,F,Subway,40.701397,-73.986751
+235,235,F18,IND,6th Av - Culver,York St,Bk,F,Subway,40.699743,-73.986885
 236,236,F20,IND,6th Av - Culver,Bergen St,Bk,F G,Subway,40.686145,-73.990862
 237,237,F21,IND,6th Av - Culver,Carroll St,Bk,F G,Subway,40.680303,-73.995048
 238,238,F22,IND,6th Av - Culver,Smith - 9 Sts,Bk,F G,Viaduct,40.67358,-73.995959

@@ -60,7 +60,7 @@ def printGmaps(j):
 		s = ''
 		s+='   {0} '.format(int(r))
 		for element in row['elements']:
-			s+='{0:8}'.format(element['distance']['value'])
+			s+='{0:8}'.format(element['duration']['text'])
 		print(s)
 	print('')
 def gmapsRequest(s1,s2):
@@ -72,6 +72,7 @@ def gmapsRequest(s1,s2):
 	url = 'https://maps.googleapis.com/maps/api/distancematrix/json?'
 	request = '{0}units={1}&mode={2}&origins={3}&destinations={4}&key={5}'.format(
 		url,units,mode,origin,dest,key)
+	#print(request)
 	return requests.get(url=request).json()
 #given a Stop ID, return the Station dict
 def lookupStation(code):
@@ -93,8 +94,8 @@ with open("StationEntrances.csv") as f:
 for ent in entrances:
 	ent['Stop ID']=stationCode(ent)
 
-stopone = lookupStation('D13')#random.choice(stations)
-stoptwo = lookupStation('A12')#random.choice(stations)
+stopone = lookupStation('A40')#random.choice(stations)
+stoptwo = lookupStation('F18')#random.choice(stations)
 
 printStop(stopone)
 #for e in getAllEnts(stopone):
@@ -105,3 +106,4 @@ printStop(stoptwo)
 #r = requests.get(url=gmapsDistance(stopone,stoptwo))
 #data = r.json()
 printGmaps(gmapsRequest(stopone,stoptwo))
+#gmapsRequest(stopone,stoptwo)
