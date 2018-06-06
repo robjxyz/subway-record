@@ -46,11 +46,23 @@ def printEnt(e):
 #print out the JSON nicely
 def printGmaps(j):
 	print('Origins:')
-	for o in range(len(j['origin_addresses'])):
-		print('  {0}  {1}'.format(str(o),j['origin_addresses'][o]))
+	for o,origin in enumerate(j['origin_addresses']):
+		print('  {0}  {1}'.format(str(o),origin))
 	print('Destinations:')
+	for d,destination in enumerate(j['destination_addresses']):
+		print('  {0}  {1}'.format(chr(ord('A')+d),destination))
+	print('')
+	s = '           '
 	for d in range(len(j['destination_addresses'])):
-		print('  {0}  {1}'.format(chr(ord('A')+d),j['destination_addresses'][d]))
+		s+='{0:8}'.format(str(chr(ord('A')+d)))
+	print(s)
+	for r,row in enumerate(j['rows']):
+		s = ''
+		s+='   {0} '.format(int(r))
+		for element in row['elements']:
+			s+='{0:8}'.format(element['distance']['value'])
+		print(s)
+	print('')
 def gmapsRequest(s1,s2):
 	origin = origDestString(s1)
 	dest = origDestString(s2)
@@ -60,9 +72,13 @@ def gmapsRequest(s1,s2):
 	url = 'https://maps.googleapis.com/maps/api/distancematrix/json?'
 	request = '{0}units={1}&mode={2}&origins={3}&destinations={4}&key={5}'.format(
 		url,units,mode,origin,dest,key)
-	#return requests.get(url=request).json()
-	return {'origin_addresses': ['1312 55th St, Brooklyn, NY 11219, USA', '5501 Raoul Wallenberg Way, Brooklyn, NY 11219, USA', '5415-5417 New Utrecht Ave, Brooklyn, NY 11219, USA'], 'destination_addresses': ['Rockaway Fwy, Far Rockaway, NY 11691, USA', 'Rockaway Fwy, Far Rockaway, NY 11691, USA', 'Rockaway Fwy, Far Rockaway, NY 11691, USA', 'Rockaway Fwy, Far Rockaway, NY 11691, USA'], 'rows': [{'elements': [{'duration': {'text': '5 hours 3 mins', 'value': 18153}, 'distance': {'text': '15.2 mi', 'value': 24527}, 'status': 'OK'}, {'duration': {'text': '5 hours 2 mins', 'value': 18105}, 'distance': {'text': '15.2 mi', 'value': 24489}, 'status': 'OK'}, {'duration': {'text': '5 hours 2 mins', 'value': 18131}, 'distance': {'text': '15.2 mi', 'value': 24497}, 'status': 'OK'}, {'duration': {'text': '5 hours 2 mins', 'value': 18128}, 'distance': {'text': '15.2 mi', 'value': 24520}, 'status': 'OK'}]}, {'elements': [{'duration': {'text': '5 hours 3 mins', 'value': 18203}, 'distance': {'text': '15.3 mi', 'value': 24583}, 'status': 'OK'}, {'duration': {'text': '5 hours 3 mins', 'value': 18156}, 'distance': {'text': '15.3 mi', 'value': 24545}, 'status': 'OK'}, {'duration': {'text': '5 hours 3 mins', 'value': 18181}, 'distance': {'text': '15.3 mi', 'value': 24552}, 'status': 'OK'}, {'duration': {'text': '5 hours 3 mins', 'value': 18178}, 'distance': {'text': '15.3 mi', 'value': 24575}, 'status': 'OK'}]}, {'elements': [{'duration': {'text': '5 hours 3 mins', 'value': 18174}, 'distance': {'text': '15.3 mi', 'value': 24556}, 'status': 'OK'}, {'duration': {'text': '5 hours 2 mins', 'value': 18127}, 'distance': {'text': '15.2 mi', 'value': 24519}, 'status': 'OK'}, {'duration': {'text': '5 hours 3 mins', 'value': 18152}, 'distance': {'text': '15.2 mi', 'value': 24526}, 'status': 'OK'}, {'duration': {'text': '5 hours 2 mins', 'value': 18149}, 'distance': {'text': '15.3 mi', 'value': 24549}, 'status': 'OK'}]}], 'status': 'OK'}
-
+	return requests.get(url=request).json()
+#given a Stop ID, return the Station dict
+def lookupStation(code):
+	for s in stations:
+		if s['GTFS Stop ID'] == code:
+			return s
+	return None
 
 stations = []
 with open("Stations.csv") as f:
@@ -77,13 +93,13 @@ with open("StationEntrances.csv") as f:
 for ent in entrances:
 	ent['Stop ID']=stationCode(ent)
 
-stopone = random.choice(stations)
-stoptwo = random.choice(stations)
+stopone = lookupStation('D13')#random.choice(stations)
+stoptwo = lookupStation('A12')#random.choice(stations)
 
-#printStop(stopone)
+printStop(stopone)
 #for e in getAllEnts(stopone):
 #	printEnt(e)
-#printStop(stoptwo)
+printStop(stoptwo)
 #for e in getAllEnts(stoptwo):
 #	printEnt(e)
 #r = requests.get(url=gmapsDistance(stopone,stoptwo))
