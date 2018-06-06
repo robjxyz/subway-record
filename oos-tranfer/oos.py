@@ -32,6 +32,10 @@ def getAllEnts(s):
 	for sta in getComplex(s):
 		allEnts += getEnts(sta)
 	return allEnts
+def origDestString(s):
+	ents = getAllEnts(s)
+	return ''.join(['{0}%2C{1}%7C'.format(e['Latitude'],e[
+		'Longitude']) for e in ents])[:-3]
 #print a stops details nicely
 def printStop(s):
 	print('{0} - {1}, {2}'.format(s['Stop Name'],s['GTFS Stop ID'],
@@ -40,10 +44,8 @@ def printEnt(e):
 	print('{0} {1},{2},{3}'.format(e['Stop ID'],
 		e['North_South_Street'],e['East_West_Street'],e['Corner']))	
 def gmapsDistance(s1,s2):
-	origin = '{0},{1}'.format(
-		s1['GTFS Latitude'],s1['GTFS Longitude'])
-	dest = '{0},{1}'.format(
-		s2['GTFS Latitude'],s2['GTFS Longitude'])
+	origin = origDestString(s1)
+	dest = origDestString(s2)
 	key = ''
 	units = 'imperial'
 	mode = 'walking'
@@ -74,3 +76,7 @@ stoptwo = random.choice(stations)
 printStop(stopone)
 for e in getAllEnts(stopone):
 	printEnt(e)
+printStop(stoptwo)
+for e in getAllEnts(stoptwo):
+	printEnt(e)
+gmapsDistance(stopone,stoptwo)
