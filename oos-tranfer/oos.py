@@ -3,7 +3,7 @@ import csv,random,json,requests,geopy.distance
 #Takes two lat,lon tuples, gives a distance in m
 #  as-the-crow-flies
 def geoDistance(p1,p2):
-	return geopy.distance.vincenty(p1,p2).m
+	return round(geopy.distance.vincenty(p1,p2).m)
 
 #take a list of headers, and a row. 
 #return a dict {h[0]:r[0],h[1]:r[1]...}
@@ -77,8 +77,21 @@ def gmapsRequest(s1,s2):
 	url = 'https://maps.googleapis.com/maps/api/distancematrix/json?'
 	request = '{0}units={1}&mode={2}&origins={3}&destinations={4}&key={5}'.format(
 		url,units,mode,origin,dest,key)
-	#print(request)
+	print(request)
 	return requests.get(url=request).json()
+def geoRequest(s1,s2):
+	orig = getAllEnts(s1)
+	dest = getAllEnts(s2)
+	distanceMatrix = []
+	for o in orig:
+		row = []
+		for d in dest:
+			row.append(geoDistance(
+				(o['Latitude'],o['Longitude']),
+				(d['Latitude'],d['Longitude'])))
+		distanceMatrix.append(row)
+	return distanceMatrix
+
 #given a Stop ID, return the Station dict
 def lookupStation(code):
 	for s in stations:
@@ -111,6 +124,8 @@ printStop(stoptwo)
 #r = requests.get(url=gmapsDistance(stopone,stoptwo))
 #data = r.json()
 printGmaps(gmapsRequest(stopone,stoptwo))
+for row in geoRequest(stopone,stoptwo):
+	print(row)
 #gmapsRequest(stopone,stoptwo)
-print(geoDistance((stopone['GTFS Latitude'],stopone['GTFS Longitude']),
-	(stoptwo['GTFS Latitude'],stoptwo['GTFS Longitude'])))
+#print(geoDistance((stopone['GTFS Latitude'],stopone['GTFS Longitude']),
+	#(stoptwo['GTFS Latitude'],stoptwo['GTFS Longitude'])))
