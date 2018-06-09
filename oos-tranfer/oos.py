@@ -1,4 +1,9 @@
-import csv,random,json,requests
+import csv,random,json,requests,geopy.distance
+
+#Takes two lat,lon tuples, gives a distance in m
+#  as-the-crow-flies
+def geoDistance(p1,p2):
+	return geopy.distance.vincenty(p1,p2).m
 
 #take a list of headers, and a row. 
 #return a dict {h[0]:r[0],h[1]:r[1]...}
@@ -60,7 +65,7 @@ def printGmaps(j):
 		s = ''
 		s+='   {0} '.format(int(r))
 		for element in row['elements']:
-			s+='{0:8}'.format(element['duration']['text'])
+			s+='{0:8}'.format(element['distance']['value'])
 		print(s)
 	print('')
 def gmapsRequest(s1,s2):
@@ -95,7 +100,7 @@ for ent in entrances:
 	ent['Stop ID']=stationCode(ent)
 
 stopone = lookupStation('A40')#random.choice(stations)
-stoptwo = lookupStation('F18')#random.choice(stations)
+stoptwo = lookupStation('231')#random.choice(stations)
 
 printStop(stopone)
 #for e in getAllEnts(stopone):
@@ -107,3 +112,5 @@ printStop(stoptwo)
 #data = r.json()
 printGmaps(gmapsRequest(stopone,stoptwo))
 #gmapsRequest(stopone,stoptwo)
+print(geoDistance((stopone['GTFS Latitude'],stopone['GTFS Longitude']),
+	(stoptwo['GTFS Latitude'],stoptwo['GTFS Longitude'])))
