@@ -112,8 +112,8 @@ with open("StationEntrances.csv") as f:
 for ent in entrances:
 	ent['Stop ID']=stationCode(ent)
 
-stopone = lookupStation('A40')#random.choice(stations)
-stoptwo = lookupStation('231')#random.choice(stations)
+stopone = lookupStation('601')#random.choice(stations)
+stoptwo = lookupStation('505')#random.choice(stations)
 
 printStop(stopone)
 #for e in getAllEnts(stopone):

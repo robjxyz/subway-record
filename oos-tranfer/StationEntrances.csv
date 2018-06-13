@@ -502,11 +502,15 @@ IND,63rd Street,21st St,40.754203,-73.942836,F,,,,,,,,,,,Escalator,YES,,YES,FULL
 IND,63rd Street,21st St,40.754203,-73.942836,F,,,,,,,,,,,Stair,YES,,YES,FULL,,TRUE,,TRUE,21st St,41st Ave,NE,40.754069,-73.942132
 IND,63rd Street,21st St,40.754203,-73.942836,F,,,,,,,,,,,Stair,YES,,YES,FULL,,TRUE,,TRUE,21st St,41st Ave,NE,40.754255,-73.941935
 IND,63rd Street,Roosevelt Island,40.759145,-73.95326,F,,,,,,,,,,,Door,YES,,YES,FULL,,TRUE,,TRUE,West Rd,Unnamed St,SE,40.759016,-73.953505
-IND,63rd Street,Lexington Av,40.764627,-73.96611,F,,,,,,,,,,,Elevator,YES,,YES,FULL,,TRUE,,TRUE,Lexington Ave,63rd St,NW,40.764884,-73.966514
-IND,63rd Street,Lexington Av,40.764627,-73.96611,F,,,,,,,,,,,Escalator,YES,,YES,FULL,,TRUE,,TRUE,Lexington Ave,63rd St,NW,40.764874,-73.966431
-IND,63rd Street,Lexington Av,40.764627,-73.96611,F,,,,,,,,,,,Escalator,YES,,YES,FULL,,TRUE,,TRUE,Lexington Ave,63rd St,NW,40.764881,-73.966411
-IND,63rd Street,Lexington Av,40.764627,-73.96611,F,,,,,,,,,,,Stair,YES,,YES,FULL,,TRUE,,TRUE,Lexington Ave,63rd St,SW,40.764721,-73.966552
-IND,63rd Street,Lexington Av,40.764627,-73.96611,F,,,,,,,,,,,Stair,YES,,YES,FULL,,TRUE,,TRUE,Lexington Ave,63rd St,NW,40.764866,-73.966422
+IND,63rd Street,Lexington Av,40.764627,-73.96611,F,Q,,,,,,,,,,Elevator,YES,,YES,FULL,,TRUE,,TRUE,Lexington Ave,63rd St,NW,40.764884,-73.966514
+IND,63rd Street,Lexington Av,40.764627,-73.96611,F,Q,,,,,,,,,,Escalator,YES,,YES,FULL,,TRUE,,TRUE,Lexington Ave,63rd St,NW,40.764874,-73.966431
+IND,63rd Street,Lexington Av,40.764627,-73.96611,F,Q,,,,,,,,,,Escalator,YES,,YES,FULL,,TRUE,,TRUE,Lexington Ave,63rd St,NW,40.764881,-73.966411
+IND,63rd Street,Lexington Av,40.764627,-73.96611,F,Q,,,,,,,,,,Stair,YES,,YES,FULL,,TRUE,,TRUE,Lexington Ave,63rd St,SW,40.764721,-73.966552
+IND,63rd Street,Lexington Av,40.764627,-73.96611,F,Q,,,,,,,,,,Stair,YES,,YES,FULL,,TRUE,,TRUE,Lexington Ave,63rd St,NW,40.764866,-73.966422
+IND,63rd Street,Lexington Av,40.764627,-73.96611,F,Q,,,,,,,,,,Elevator,YES,,YES,FULL,,TRUE,,TRUE,3rd Ave,63rd St,NW,40.764200,-73.964959
+IND,63rd Street,Lexington Av,40.764627,-73.96611,F,Q,,,,,,,,,,Stair,YES,,YES,FULL,,TRUE,,TRUE,3rd Ave,63rd St,SW,40.764065,-73.964973
+IND,63rd Street,Lexington Av,40.764627,-73.96611,F,Q,,,,,,,,,,Stair,YES,,YES,FULL,,TRUE,,TRUE,3rd Ave,63rd St,NE,40.764145,-73.964526
+IND,63rd Street,Lexington Av,40.764627,-73.96611,F,Q,,,,,,,,,,Escalator,YES,,YES,FULL,,TRUE,,TRUE,3rd Ave,63rd St,NW,40.763844,-73.964448
 IND,6 Avenue,57th St,40.763972,-73.97745,F,,,,,,,,,,,Stair,YES,,YES,FULL,,FALSE,,TRUE,6th Ave,56th St,NE,40.763874,-73.977358
 IND,6 Avenue,57th St,40.763972,-73.97745,F,,,,,,,,,,,Stair,YES,,YES,FULL,,FALSE,,TRUE,6th Ave,57th St,SW,40.764227,-73.97743
 IND,6 Avenue,57th St,40.763972,-73.97745,F,,,,,,,,,,,Stair,YES,,YES,FULL,,FALSE,,TRUE,6th Ave,57th St,SE,40.763998,-73.977264
@@ -1865,3 +1869,17 @@ IRT,Lexington,Canal St,40.718803,-74.000193,J,N,Q,R,Z,6,,,,,,Stair,NO,,NO,NONE,,
 IRT,Lexington,Fulton St,40.710368,-74.009509,A,C,J,Z,2,3,4,5,,,,Easement,NO,,NO,NONE,,FALSE,,TRUE,Broadway,Fulton St,SW,40.710944,-74.009403
 IRT,Lexington,Fulton St,40.710368,-74.009509,A,C,J,Z,2,3,4,5,,,,Stair,NO,,NO,NONE,,FALSE,,TRUE,Broadway,Fulton St,NW,40.711026,-74.00919
 IRT,Lexington,Fulton St,40.710368,-74.009509,A,C,J,Z,2,3,4,5,,,,Stair,NO,,NO,NONE,,FALSE,,TRUE,Broadway,Fulton St,NW,40.711112,-74.009382
+IRT,Flushing,34 St - 11 Av,40.755882,-74.00191,7,,,,,,,,,,,Escalator,YES,,YES,FULL,,TRUE,,TRUE,Hudson Blvd E,34th St,SW,40.754946,-74.000926
+IRT,Flushing,34 St - 11 Av,40.755882,-74.00191,7,,,,,,,,,,,Elevator,YES,,YES,FULL,,TRUE,,TRUE,Hudson Blvd E,34th St,SW,40.754902,-74.001321
+IND,Second Av,96 St,40.784318,-73.947152,Q,,,,,,,,,,,Escalator,YES,,YES,FULL,,TRUE,,TRUE,2nd Ave,96th St,SW,40.784106,-73.947467
+IND,Second Av,96 St,40.784318,-73.947152,Q,,,,,,,,,,,Elevator,YES,,YES,FULL,,TRUE,,TRUE,2nd Ave,96th St,SW,40.783922,-73.947593
+IND,Second Av,96 St,40.784318,-73.947152,Q,,,,,,,,,,,Escalator,YES,,YES,FULL,,TRUE,,TRUE,2nd Ave,94th St,NE,40.783055,-73.947764
+IND,Second Av,96 St,40.784318,-73.947152,Q,,,,,,,,,,,Escalator,YES,,YES,FULL,,TRUE,,TRUE,2nd Ave,94th St,SW,40.782845,-73.948334
+IND,Second Av,86 St,40.777891,-73.951787,Q,,,,,,,,,,,Escalator,YES,,YES,FULL,,TRUE,,TRUE,2nd Ave,86th St,NE,40.777864,-73.951450
+IND,Second Av,86 St,40.777891,-73.951787,Q,,,,,,,,,,,Escalator,YES,,YES,FULL,,TRUE,,TRUE,2nd Ave,86th St,NE,40.777589,-73.950796
+IND,Second Av,86 St,40.777891,-73.951787,Q,,,,,,,,,,,Elevator,YES,,YES,FULL,,TRUE,,TRUE,2nd Ave,86th St,SE,40.777720,-73.951567
+IND,Second Av,86 St,40.777891,-73.951787,Q,,,,,,,,,,,Escalator,YES,,YES,FULL,,TRUE,,TRUE,2nd Ave,83th St,NE,40.776074,-73.952810
+IND,Second Av,72 St,40.768799,-73.958424,Q,,,,,,,,,,,Escalator,YES,,YES,FULL,,TRUE,,TRUE,2nd Ave,72nd St,NW,40.769001,-73.958440
+IND,Second Av,72 St,40.768799,-73.958424,Q,,,,,,,,,,,Elevator,YES,,YES,FULL,,TRUE,,TRUE,2nd Ave,72nd St,SE,40.768585,-73.958338
+IND,Second Av,72 St,40.768799,-73.958424,Q,,,,,,,,,,,Escalator,YES,,YES,FULL,,TRUE,,TRUE,2nd Ave,70th St,SE,40.767204,-73.959424
+IND,Second Av,72 St,40.768799,-73.958424,Q,,,,,,,,,,,Escalator,YES,,YES,FULL,,TRUE,,TRUE,2nd Ave,69th St,NE,40.766964,-73.959593
