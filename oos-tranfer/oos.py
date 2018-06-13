@@ -112,20 +112,38 @@ with open("StationEntrances.csv") as f:
 for ent in entrances:
 	ent['Stop ID']=stationCode(ent)
 
-stopone = lookupStation('601')#random.choice(stations)
-stoptwo = lookupStation('505')#random.choice(stations)
+requests = 0
+for s1 in stations:
+	if s1['Division']=='SIR':continue
+	if s1['GTFS Stop ID']!='M01':continue
+	for s2 in stations:
+		if s2['Division']=='SIR':continue
+		if s1==s2: continue
+		d = geoDistance(
+			(s1['GTFS Latitude'],s1['GTFS Longitude']),
+			(s2['GTFS Latitude'],s2['GTFS Longitude']))
+		if d<3500:
+			print('{0}({1})\t{2}({3})'.format(
+				s1['Stop Name'],s1['Daytime Routes'],
+				s2['Stop Name'],s2['Daytime Routes']))
+			requests += 1
+print(requests)
+		
 
-printStop(stopone)
+#stopone = lookupStation('227')#random.choice(stations)
+#stoptwo = lookupStation('Q05')#random.choice(stations)
+
+#printStop(stopone)
 #for e in getAllEnts(stopone):
 #	printEnt(e)
-printStop(stoptwo)
+#printStop(stoptwo)
 #for e in getAllEnts(stoptwo):
 #	printEnt(e)
 #r = requests.get(url=gmapsDistance(stopone,stoptwo))
 #data = r.json()
-printGmaps(gmapsRequest(stopone,stoptwo))
-for row in geoRequest(stopone,stoptwo):
-	print(row)
+#printGmaps(gmapsRequest(stopone,stoptwo))
+#for row in geoRequest(stopone,stoptwo):
+#	print(row)
 #gmapsRequest(stopone,stoptwo)
 #print(geoDistance((stopone['GTFS Latitude'],stopone['GTFS Longitude']),
 	#(stoptwo['GTFS Latitude'],stoptwo['GTFS Longitude'])))
