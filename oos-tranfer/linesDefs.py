@@ -53,6 +53,29 @@ def lex((code,stop)):
 def flushing((code,stop)):
 	return code=='7'
 
+#S Grand central
+def gcs((code,stop)):
+	return code=='9'
+
+#A train
+def eightN((code,stop)):
+	return code=='A' and 2<=stop<=11
+def eightM((code,stop)):
+	if code=='A' and 12<=stop<=24: return True
+	if code=='D' and stop==13: return True
+	return False
+def eightS((code,stop)):
+	if code=='A' and 25<=stop<=34: return True
+	if code=='D' and stop==20: return True
+	return False
+def fultonN((code,stop)):
+	return code=='A' and 36<=stop<=40
+def fultonM((code,stop)):
+	return code=='A' and 43<=stop<=61
+def fultonS((code,stop)):
+	return code=='A' and 63<=stop<=65
+def rockN((code,stop)):
+	return code==
 
 
 #Tests
