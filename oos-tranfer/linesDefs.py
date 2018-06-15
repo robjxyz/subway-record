@@ -152,8 +152,20 @@ def sea((code,stop)):
 #Q train
 def second((code,stop)):
 	return code=='Q' and 3<=stop<=5
+def brighton((code,stop)):
+	return code=='D' and 24<=stop<=41
+def franklin((code,stop)):
+	if code=='S' and 1<=stop<=3: return True
+	if code=='D' and stop==26: return True
+	return False
 
+#R train
+def fourthS((code,stop)):
+	return code=='R' and 42<=stop<=45
 
+#SIR
+def sir((code,stop)):
+	return code=='S' and 9<=stop<=31
 
 #Tests
 #print(bwy7N(digestStopCode('112')))
