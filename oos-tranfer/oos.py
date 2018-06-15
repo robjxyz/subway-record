@@ -1,4 +1,5 @@
 import csv,random,json,requests,geopy.distance
+from lineDef import sameLine
 
 #Takes two lat,lon tuples, gives a distance in m
 #  as-the-crow-flies
@@ -115,10 +116,10 @@ for ent in entrances:
 requests = 0
 for s1 in stations:
 	if s1['Division']=='SIR':continue
-	if s1['GTFS Stop ID']!='M01':continue
+	if s1['GTFS Stop ID']!='H11':continue
 	for s2 in stations:
 		if s2['Division']=='SIR':continue
-		if s1==s2: continue
+		if sameLine(s1['GTFS Stop ID'],s2['GTFS Stop ID']):continue
 		d = geoDistance(
 			(s1['GTFS Latitude'],s1['GTFS Longitude']),
 			(s2['GTFS Latitude'],s2['GTFS Longitude']))
