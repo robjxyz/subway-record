@@ -104,7 +104,7 @@ def geoMin(s1,s2):
 	dest = getAllEnts(s2)
 	bestorig=orig[0]
 	bestdest=dest[0]
-	bestdist=10000
+	bestdist=100000
 	for o in orig:
 		for d in dest:
 			newDist = geoDistance(

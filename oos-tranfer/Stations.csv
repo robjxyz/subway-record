@@ -155,7 +155,7 @@ Station ID,Complex ID,GTFS Stop ID,Division,Line,Stop Name,Borough,Daytime Route
 154,154,A16,IND,8th Av - Fulton St,116 St,M,B C,Subway,40.805085,-73.954882
 155,155,A17,IND,8th Av - Fulton St,Cathedral Pkwy (110 St),M,B C,Subway,40.800603,-73.958161
 156,156,A18,IND,8th Av - Fulton St,103 St,M,B C,Subway,40.796092,-73.961454
-157,157,A19,IND,8th Av - Fulton St,96 St,M,B C,Subway,40.791642,-73.964696
+157,157,A19,IND,8th Av - Fulton St,96 St,M,B C,Subway,40.791646,-73.964699
 158,158,A20,IND,8th Av - Fulton St,86 St,M,B C,Subway,40.785868,-73.968916
 159,159,A21,IND,8th Av - Fulton St,81 St - Museum of Natural History,M,B C,Subway,40.781433,-73.972143
 160,160,A22,IND,8th Av - Fulton St,72 St,M,B C,Subway,40.775594,-73.97641
@@ -195,7 +195,7 @@ Station ID,Complex ID,GTFS Stop ID,Division,Line,Stop Name,Borough,Daytime Route
 193,193,A63,IND,Liberty Av,104 St,Q,A,Elevated,40.681711,-73.837683
 194,194,A64,IND,Liberty Av,111 St,Q,A,Elevated,40.684331,-73.832163
 195,195,A65,IND,Liberty Av,Ozone Park - Lefferts Blvd,Q,A,Elevated,40.685951,-73.825798
-196,196,H01,IND,Rockaway,Aqueduct Racetrack,Q,A,At Grade,40.672097,-73.835919
+196,196,H01,IND,Rockaway,Aqueduct Racetrack,Q,A,At Grade,40.672131,-73.835812
 197,197,H02,IND,Rockaway,Aqueduct - N Conduit Av,Q,A,At Grade,40.668234,-73.834058
 198,198,H03,IND,Rockaway,Howard Beach - JFK Airport,Q,A,At Grade,40.660476,-73.830301
 199,199,H04,IND,Rockaway,Broad Channel,Q,A S,At Grade,40.608382,-73.815925
@@ -222,7 +222,7 @@ Station ID,Complex ID,GTFS Stop ID,Division,Line,Stop Name,Borough,Daytime Route
 220,220,D12,IND,Concourse,155 St,M,B D,Subway,40.830135,-73.938209
 221,221,B04,IND,63rd St,21 St - Queensbridge,Q,F,Subway,40.754203,-73.942836
 222,222,B06,IND,63rd St,Roosevelt Island,M,F,Subway,40.759145,-73.95326
-223,223,B08,IND,63rd St,Lexington Av/63 St,M,F Q,Subway,40.764629,-73.966113
+223,223,B08,IND,63rd St,Lexington Av/63 St,M,F Q,Subway,40.764627,-73.96611
 224,224,B10,IND,6th Av - Culver,57 St,M,F,Subway,40.763972,-73.97745
 225,225,D15,IND,6th Av - Culver,47-50 Sts - Rockefeller Ctr,M,B D F M,Subway,40.758663,-73.981329
 226,609,D16,IND,6th Av - Culver,42 St - Bryant Pk,M,B D F M,Subway,40.754222,-73.984569
