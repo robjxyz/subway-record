@@ -153,7 +153,7 @@ Station ID,Complex ID,GTFS Stop ID,Division,Line,Stop Name,Borough,Daytime Route
 152,152,A14,IND,8th Av - Fulton St,135 St,M,B C,Subway,40.817894,-73.947649
 153,153,A15,IND,8th Av - Fulton St,125 St,M,A B C D,Subway,40.811109,-73.952343
 154,154,A16,IND,8th Av - Fulton St,116 St,M,B C,Subway,40.805085,-73.954882
-155,155,A17,IND,8th Av - Fulton St,Cathedral Pkwy (110 St),M,B C,Subway,40.800603,-73.958161
+155,155,A17,IND,8th Av - Fulton St,Cathedral Pkwy (110 St),M,B C,Subway,40.800605,-73.958158
 156,156,A18,IND,8th Av - Fulton St,103 St,M,B C,Subway,40.796092,-73.961454
 157,157,A19,IND,8th Av - Fulton St,96 St,M,B C,Subway,40.791646,-73.964699
 158,158,A20,IND,8th Av - Fulton St,86 St,M,B C,Subway,40.785868,-73.968916
@@ -217,7 +217,7 @@ Station ID,Complex ID,GTFS Stop ID,Division,Line,Stop Name,Borough,Daytime Route
 215,215,D07,IND,Concourse,Tremont Av,Bx,B D,Subway,40.85041,-73.905227
 216,216,D08,IND,Concourse,174-175 Sts,Bx,B D,Subway,40.8459,-73.910136
 217,217,D09,IND,Concourse,170 St,Bx,B D,Subway,40.839306,-73.9134
-218,218,D10,IND,Concourse,167 St,Bx,B D,Subway,40.833771,-73.91844
+218,218,D10,IND,Concourse,167 St,Bx,B D,Subway,40.833769,-73.918432
 219,604,D11,IND,Concourse,161 St - Yankee Stadium,Bx,B D,Subway,40.827905,-73.925651
 220,220,D12,IND,Concourse,155 St,M,B D,Subway,40.830135,-73.938209
 221,221,B04,IND,63rd St,21 St - Queensbridge,Q,F,Subway,40.754203,-73.942836
@@ -297,7 +297,7 @@ Station ID,Complex ID,GTFS Stop ID,Division,Line,Stop Name,Borough,Daytime Route
 295,295,104,IRT,Broadway - 7Av,231 St,Bx,1,Elevated,40.878856,-73.904834
 296,296,106,IRT,Broadway - 7Av,Marble Hill - 225 St,M,1,Elevated,40.874561,-73.909831
 297,297,107,IRT,Broadway - 7Av,215 St,M,1,Elevated,40.869444,-73.915279
-298,298,108,IRT,Broadway - 7Av,207 St,M,1,Elevated,40.864621,-73.918822
+298,298,108,IRT,Broadway - 7Av,207 St,M,1,Elevated,40.864614,-73.918819
 299,299,109,IRT,Broadway - 7Av,Dyckman St,M,1,Elevated,40.860531,-73.925536
 300,300,110,IRT,Broadway - 7Av,191 St,M,1,Subway,40.855225,-73.929412
 301,301,111,IRT,Broadway - 7Av,181 St,M,1,Subway,40.849505,-73.933596

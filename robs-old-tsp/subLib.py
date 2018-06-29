@@ -4,7 +4,7 @@ import sys, os, pickle
 from datetime import date, datetime, timedelta, time
 from optimizers import shortestPath, solve_tsp
 
-directory = '/home/robj/Scripts/subway/'
+directory = '/home/robj/Scripts/subway-record/'
 routes = directory+'routes.txt'
 stops = directory+'stops.txt'
 trips = directory+'trips.txt'
