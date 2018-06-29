@@ -44,18 +44,17 @@ def saveTransfers(t,r):
 				requests += 1
 				if requests >= r: return
 			
-saveTransfers(transfers,1000)
-for l in transfers:
-	print(l)
+saveTransfers(transfers,2400)
+#for l in transfers:
+#	print(l)
 print('Saved '+str(len(transfers)))
 
 pickle.dump(transfers,open("transfers-oos.pickle","wb"))
 
 
-#stopone = lookupStation('F18')#random.choice(stations)
-#stoptwo = lookupStation('A40')#random.choice(stations)
-
-#printGmaps(gmapsRequest(stopone,stoptwo))
+#stopone = lookupStation('108')#random.choice(stations)
+#stoptwo = lookupStation('A02')#random.choice(stations)
+#
 #for row in gmapsRequest(stopone,stoptwo):
 #	print(row)
 #print('')
