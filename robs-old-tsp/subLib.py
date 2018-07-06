@@ -4,15 +4,15 @@ import sys, os, pickle
 from datetime import date, datetime, timedelta, time
 from optimizers import shortestPath, solve_tsp
 
-directory = '/home/robj/Scripts/subway-record/'
-routes = directory+'routes.txt'
-stops = directory+'stops.txt'
-trips = directory+'trips.txt'
-stop_times = directory+'stop_times.txt'
-transfers = directory+'transfers.txt'
-calendar = directory+'calendar.txt'
-calendar_dates = directory+'calendar_dates.txt'
-shapes = directory+'shapes.txt'
+directory = '/home/robj/Scripts/subway-record/robs-old-tsp/'
+routes = directory+'gtfs/routes.txt'
+stops = directory+'gtfs/stops.txt'
+trips = directory+'gtfs/trips.txt'
+stop_times = directory+'gtfs/stop_times.txt'
+transfers = directory+'gtfs/transfers.txt'
+calendar = directory+'gtfs/calendar.txt'
+calendar_dates = directory+'gtfs/calendar_dates.txt'
+shapes = directory+'gtfs/shapes.txt'
 dbname = directory+'subway.db'
 graphname = directory+'graph.p'
 shortest_pathsname = directory+'shortest_paths.p'
@@ -214,7 +214,7 @@ def nyctStops():
   stops = Stop.select()
   nyct = []
   for s in stops:
-    if not sir(s):
+    if not sir(s) and s.stop_id!='H19':
       nyct.append(s)
   return nyct
     
@@ -456,7 +456,7 @@ def makeObjectDB(verbose=False, force=False,
   if verbose: print(
       'Creating Trips:    ',end="") 
   for i,t in enumerate(trip_list):
-    if 'WKD' not in t['service_id']: continue
+    if 'Weekday' not in t['service_id']: continue
     r = Route.get(
         Route.route_id == t['route_id'])
     north = (t['direction_id'] == '1')
@@ -475,7 +475,7 @@ def makeObjectDB(verbose=False, force=False,
   if verbose: print(
       'Creating StopTimes:    ',end="")
   for i,st in enumerate(stop_times_list):
-    if 'WKD' not in st['trip_id']: continue
+    if 'Weekday' not in st['trip_id']: continue
     if st['stop_id'][-1] in ('N','S'):
       stop_id = st['stop_id'][:-1]
     else: 
@@ -519,7 +519,7 @@ def makeObjectDB(verbose=False, force=False,
       adjusted_seconds = int(int(g_maps_minutes)*60*.666/30)*30
       print('adding transfer: {0}'.format(adjusted_seconds))
       hms = secondsToHMS(str(adjusted_seconds))
-      txobjA = Transfer(time=hms, to=st, frm=sf
+      txobjA = Transfer(time=hms, to=st, frm=sf)
       txobjB = Transfer(time=hms, to=sf, frm=st)
       txobjA.save()
       txobjB.save()
@@ -616,7 +616,10 @@ def makeShortestPathsDict(
     d[frm] = {}
     for j,tostop in enumerate(nyctStops()):
       to = str(tostop.stop_id)
-      d[frm][to] = shortestPath(g,frm,to)
+      try:
+        d[frm][to] = shortestPath(g,frm,to)
+      except KeyError:
+        pass
   if verbose: 
     print('\033[F100%')
     print('Saving dict as pickle {0}'.format(
@@ -641,7 +644,10 @@ def makeAdjacencyMatrix():
     for j, stopy in enumerate(nyctStops()):
       x = stopx.stop_id
       y = stopy.stop_id
-      row.append(d[x][y][1])
+      try:
+        row.append(d[x][y][1])
+      except KeyError:
+        pass
     matrix.append(row)
   return addDummyPoint(matrix, d)
 
@@ -653,6 +659,7 @@ def printTSP():
   xxx = Stop(name='End of trip', stop_id='XXX')
   xxx.save()
   lookup.append(xxx)
+  print(route)
   rotary = []
   for i in range(len(route)):
     a = lookup[route[i]]

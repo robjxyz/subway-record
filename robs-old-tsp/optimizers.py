@@ -170,7 +170,7 @@ def shortestPath(G,start,end):
 #######################################################################
 
 
-def solve_tsp(adj, filename='/home/robj/Scripts/subway/_tmp_'):
+def solve_tsp(adj, filename='/home/robj/Scripts/subway-record/robs-old-tsp/_tmp_'):
   with open('{0}.dat'.format(filename), 'w') as fp:
     fp.write('TYPE : TSP\n')
     fp.write('DIMENSION : {0}\n'.format(len(adj)))
@@ -182,7 +182,7 @@ def solve_tsp(adj, filename='/home/robj/Scripts/subway/_tmp_'):
         fp.write(' {0}'.format(y))
       fp.write('\n')
     fp.write('EOF\n')     
-  concorde_dir = '/home/robj/Scripts/concorde-for-subway/src/concorde/TSP/concorde'
+  concorde_dir = '/home/robj/Scripts/subway-record/robs-old-tsp/concorde-for-subway/src/concorde/TSP/concorde'
   #print('{0} {1}.dat'.format(concorde_dir,filename))
   prc = Popen('{0} {1}.dat'.format(concorde_dir,filename),shell=True)
   prc.wait()

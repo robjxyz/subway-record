@@ -44,12 +44,26 @@ def saveTransfers(t,r):
 				requests += 1
 				if requests >= r: return
 			
-saveTransfers(transfers,2400)
+#make an "extra transfers" file
+def extraTransfers(path):
+	with open(path,'w+') as f:
+		f.write('stopA,stopB,distance,time,comments\n')
+		for t in transfers:
+			stopA = t[0][0]
+			stopB = t[0][1]
+			distance = t[1]*.000621371
+			time = distance*9
+			f.write('{0},{1},{2},{3},\n'.format(stopA,stopB,round(distance,1),round(time)))
+			
+
+extraTransfers('/home/robj/Scripts/subway-record/oos-tranfer/extra.txt')
+
+#saveTransfers(transfers,2400)
 #for l in transfers:
 #	print(l)
-print('Saved '+str(len(transfers)))
+#print('Saved '+str(len(transfers)))
 
-pickle.dump(transfers,open("transfers-oos.pickle","wb"))
+#pickle.dump(transfers,open("transfers-oos.pickle","wb"))
 
 
 #stopone = lookupStation('108')#random.choice(stations)
