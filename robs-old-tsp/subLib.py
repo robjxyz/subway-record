@@ -204,7 +204,7 @@ def timeAbslouteValue(timeA, timeB):
 #give me a list of all the stops (useful for
 # iterating through stuff
 # IMPORTANT: all this does is get rid of 
-#  SIR stops
+#  SIR stops and wierdo H19,N12
 def nyctStops():
   #SIR stops are S09 and above
   #S0-4 are shuttle stops btw
@@ -214,8 +214,10 @@ def nyctStops():
   stops = Stop.select()
   nyct = []
   for s in stops:
-    if not sir(s) and s.stop_id!='H19':
-      nyct.append(s)
+    if sir(s): continue
+    if s.stop_id=='H19': continue
+    if s.stop_id=='N12': continue
+    nyct.append(s)
   return nyct
     
 def listLineStops(route,variant=0):
@@ -616,10 +618,10 @@ def makeShortestPathsDict(
     d[frm] = {}
     for j,tostop in enumerate(nyctStops()):
       to = str(tostop.stop_id)
-      try:
-        d[frm][to] = shortestPath(g,frm,to)
-      except KeyError:
-        pass
+      #try:
+      d[frm][to] = shortestPath(g,frm,to)
+      #except KeyError:
+      #  pass
   if verbose: 
     print('\033[F100%')
     print('Saving dict as pickle {0}'.format(
