@@ -14,7 +14,7 @@ import os
 #        Each item is not removed until the next item is requested, so D[x] will still
 #        return a useful value until the next iteration of the for-loop.
 # Each operation takes logarithmic amortized time.
-
+path='/home/robj/Scripts/subway-record/robs-old-tsp/'
 #moved to upstairs
 #from __future__ import generators
 class priorityDictionary(dict):
@@ -170,8 +170,8 @@ def shortestPath(G,start,end):
 #######################################################################
 
 
-def solve_tsp(adj, filename='/home/robj/Scripts/subway-record/robs-old-tsp/_tmp_'):
-  with open('{0}.dat'.format(filename), 'w') as fp:
+def solve_tsp(adj, filename=path+'_tmp_'):
+  with open('{0}.dat'.format(filename), 'w+') as fp:
     fp.write('TYPE : TSP\n')
     fp.write('DIMENSION : {0}\n'.format(len(adj)))
     fp.write('EDGE_WEIGHT_TYPE : EXPLICIT\n')
@@ -182,7 +182,7 @@ def solve_tsp(adj, filename='/home/robj/Scripts/subway-record/robs-old-tsp/_tmp_
         fp.write(' {0}'.format(y))
       fp.write('\n')
     fp.write('EOF\n')     
-  concorde_dir = '/home/robj/Scripts/subway-record/robs-old-tsp/concorde-for-subway/src/concorde/TSP/concorde'
+  concorde_dir = path[:-13]+'concorde-for-subway/src/concorde/TSP/concorde'
   #print('{0} {1}.dat'.format(concorde_dir,filename))
   prc = Popen('{0} {1}.dat'.format(concorde_dir,filename),shell=True)
   prc.wait()

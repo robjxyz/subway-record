@@ -2,9 +2,9 @@ from __future__ import print_function
 from peewee import *
 import sys, os, pickle
 from datetime import date, datetime, timedelta, time
-from optimizers import shortestPath, solve_tsp
+from optimizers import shortestPath, solve_tsp, path
 
-directory = '/home/robj/Scripts/subway-record/robs-old-tsp/'
+directory = path
 routes = directory+'gtfs/routes.txt'
 stops = directory+'gtfs/stops.txt'
 trips = directory+'gtfs/trips.txt'
